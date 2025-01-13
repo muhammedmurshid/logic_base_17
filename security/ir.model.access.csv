@@ -1,4 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
 access_logic_batch,access_logic_batch,model_logic_batches,,1,1,1,1
-acces_logic_baranches,acces_logic_baranches,model_logic_branches,,1,1,1,1
