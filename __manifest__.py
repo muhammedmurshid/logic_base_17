@@ -18,7 +18,7 @@
         # 'security/ir.model.access.csv',  # Access rights
         'security/ir.model.access.csv',
         'views/base.xml',
-        'views/branch.xml'
+        # 'views/branch.xml'
 
     ],
 
