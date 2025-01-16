@@ -10,7 +10,7 @@
     'category': 'Specific Category',
     'license': 'LGPL-3',
     'depends': [
-        'base', 'hr','openeducat_core'  # List of module dependencies
+        'base', 'hr','openeducat_core',  # List of module dependencies
 
         # Add other module dependencies here
     ],
@@ -18,7 +18,7 @@
         # 'security/ir.model.access.csv',  # Access rights
         'security/ir.model.access.csv',
         'views/base.xml',
-        # 'views/branch.xml'
+        'views/branch.xml'
 
     ],
 

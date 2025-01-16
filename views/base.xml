@@ -160,7 +160,7 @@
 
     <menuitem name="Logic Base" id="main_menu_logic_base_batch"
               action="action_redirect_op_students"
-              web_icon="logic_batches,description/static/icon.png"
+              web_icon="logic_base_17,description/static/icon.png"
               sequence="2"/>
 
     <menuitem name="Batches" id="menu_logic_base_batch"
