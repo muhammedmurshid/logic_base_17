@@ -179,10 +179,7 @@
 <!--              sequence="6"/>-->
 
 
-     <menuitem name="Classrooms" id="menu_logic_base_class_room"
-              action="action_redirect_op_classes"
-              parent="main_menu_logic_base_batch"
-              sequence="4"/>
+
 
     <menuitem name="Students" id="menu_logic_base_students"
               action="action_redirect_op_students"
