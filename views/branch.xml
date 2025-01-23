@@ -47,6 +47,8 @@
         <field name="view_mode">tree,form</field>
 
     </record>
+
+
     <!--Menu Item for the model Dashboard Blocks-->
 
 
