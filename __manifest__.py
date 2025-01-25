@@ -19,7 +19,8 @@
         'security/ir.model.access.csv',
         'views/base.xml',
         'views/branch.xml',
-        'views/class.xml'
+        'views/class.xml',
+        'data/reports.xml'
 
     ],
 
