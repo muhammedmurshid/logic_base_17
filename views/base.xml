@@ -137,7 +137,7 @@
             'type': 'ir.actions.act_window',
             'name': 'Department',
             'view_mode': 'tree,form',
-            'res_model': 'hr.department',
+            'res_model': 'op.department',
             'target': 'current',
             }
         </field>
