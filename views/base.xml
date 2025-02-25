@@ -76,7 +76,7 @@
             action = {
             'type': 'ir.actions.act_window',
             'name': 'Batch',
-            'view_mode': 'kanban,tree,form',
+            'view_mode': 'tree,kanban,form',
             'res_model': 'op.batch',
             'target': 'current',
             }
@@ -91,9 +91,10 @@
             action = {
             'type': 'ir.actions.act_window',
             'name': 'Courses',
-            'view_mode': 'kanban,tree,form',
+            'view_mode': 'tree,kanban,form',
             'res_model': 'op.course',
             'target': 'current',
+            'context': {'group_by': 'department_id'},
             }
         </field>
     </record>
@@ -139,6 +140,7 @@
             'view_mode': 'kanban,tree,form',
             'res_model': 'op.department',
             'target': 'current',
+            'context': {'group_by': 'category_id'},
             }
         </field>
     </record>
