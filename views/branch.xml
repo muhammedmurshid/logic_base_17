@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="logic_branches_form_view" model="ir.ui.view">
+        <field name="name">logic.branches</field>
+        <field name="model">op.branch</field>
+        <field name="arch" type="xml">
+            <form string="Branches">
+
+                <sheet>
+
+
+                    <group>
+                        <group>
+                            <field name="create_date" widget="date" string="Added Date"/>
+                            <field name="name" style="background:#fac17f;"/>
+                            <field name="branch_head_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="logic_branches_view" model="ir.ui.view">
+        <field name="name">logic.branches</field>
+        <field name="model">op.branch</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="create_date" widget="badge" string="Added Date"/>
+                <field name="name"/>
+                <field name="branch_head_id"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="logic_branches_action" model="ir.actions.act_window">
+        <field name="name">Branches</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">op.branch</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+
+
+    <!--Menu Item for the model Dashboard Blocks-->
+
+
+    <menuitem name="Branches" id="logic_branches_main_menu"
+              parent="hr.menu_hr_root"
+              action="logic_branches_action"
+              sequence="5"/>
+
+     <menuitem name="Branches" id="logic_branches_menu"
+              parent="main_menu_logic_base_batch"
+              action="logic_branches_action"
+              sequence="5"/>
+</odoo>

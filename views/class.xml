@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_op_class_tree" model="ir.ui.view">
+        <field name="name">op.class.tree</field>
+        <field name="model">op.class</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <tree string="Class">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="total_seats"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_op_class_form" model="ir.ui.view">
+        <field name="name">op.class.form</field>
+        <field name="model">op.class</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <form string="Class">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                    <!--                        <button name="act_confirm_batch" type="object" string="Confirm" invisible="state != 'draft'"-->
+                    <!--                                class="oe_highlight"/>-->
+                    <!--                        <button name="allocate_students" type="object" string="Allocate Students"-->
+                    <!--                                invisible="state != 'in_progress'"-->
+                    <!--                                class="oe_highlight"/>-->
+                </header>
+                <sheet>
+                    <field name="active" invisible="1"/>
+                    <!--                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"-->
+                    <!--                                invisible="active == True"/>-->
+                    <group>
+                        <group name="main">
+                            <field name="name"/>
+                            <!--                                <field name="academic_year"/>-->
+                            <field name="start_date"/>
+                            <field name="batch_id"/>
+                            <field name="coordinator_id"/>
+                            <!--                            <field name="batch_type"/>-->
+                            <!--                                <field name="course_id"/>-->
+                            <!--                                <field name="branch_id"/>-->
+                            <!--                                <field name="max_no_of_students"/>-->
+                            <!--                                <field name="initiated_id" string="Coordinator"/>-->
+                        </group>
+                        <group>
+                            <field name="code"/>
+                            <field name="end_date"/>
+                            <field name="create_date"/>
+                            <!--                                <field name="class_type"/>-->
+                            <!--                                <field name="batch_type"/>-->
+                            <!--                                <field name="total_no_of_students" style="background-color:#89d674; width:40px;"/>-->
+                            <!--                                <field name="currency_id" invisible="1"/>-->
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Students">
+                            <group>
+
+                            </group>
+
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--        <record id="view_op_batch_pivot" model="ir.ui.view">-->
+    <!--            <field name="name">op.batch.pivot</field>-->
+    <!--            <field name="model">op.batch</field>-->
+    <!--            <field name="priority" eval="8"/>-->
+    <!--            <field name="arch" type="xml">-->
+    <!--                <pivot string="Batch">-->
+    <!--                    <field name="name" type="row"/>-->
+    <!--                    <field name="course_id"/>-->
+    <!--                    <field name="start_date"/>-->
+    <!--                    <field name="end_date"/>-->
+    <!--                </pivot>-->
+    <!--            </field>-->
+    <!--        </record>-->
+
+
+    <record model="ir.actions.act_window" id="act_open_op_class_view">
+        <field name="name">Class</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">op.class</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+    <menuitem name="Class" id="menu_logic_base_class_room"
+              action="act_open_op_class_view"
+              parent="main_menu_logic_base_batch"
+              sequence="4"/>
+
+
+</odoo>

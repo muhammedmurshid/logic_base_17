@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="logic_base_batches_form_view" model="ir.ui.view">
+        <field name="name">Batches</field>
+        <field name="model">logic.batches</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Batch">
+                <sheet>
+                    <div class="oe_title pr-0">
+                        <h1 class="d-flex flex-row justify-content-between">
+                            <field name="name" class="o_task_name text-truncate" placeholder="Batch Name..."
+                                   default_focus="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="coordinator_id"/>
+                            <field name="batch_code"/>
+                            <!--                            <field name="first_year" invisible = "type != 'college'"/>-->
+                            <!--                            <field name="second_year" invisible = "type != 'college'"/>-->
+                            <!--                            <field name="third_year" invisible = "type != 'college'"/>-->
+                            <!--                            <field name="school_type" invisible = "type != 'college'"/>-->
+                            <!--                            <field name="district" style="background:#fac17f;"/>-->
+                            <!--                            <field name="place" style="background:#fac17f;"/>-->
+                            <!--                            <field name="institute_number" placeholder="Institute Number" widget="phone" style="background:#fac17f;"/>-->
+                        </group>
+                        <!--                        <group string="Contact Person Details">-->
+                        <!--                            <field name="designation"/>-->
+                        <!--                            <field name="contact_person_name"/>-->
+                        <!--                            <field name="contact_number" style="background:#fac17f;"/>-->
+                        <!--                        </group>-->
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="logic_base_batches_list_view" model="ir.ui.view">
+        <field name="name">Batches</field>
+        <field name="model">logic.batches</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="coordinator_id"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="logic_base_batches_action">
+        <field name="name">Batch</field>
+        <field name="res_model">logic.batches</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--    <record model="ir.actions.act_window" id="openeducat_core.act_open_op_batch_view">-->
+    <!--            <field name="name">Batches</field>-->
+    <!--            <field name="type">ir.actions.act_window</field>-->
+    <!--            <field name="res_model">op.batch</field>-->
+    <!--            <field name="binding_view_types">form</field>-->
+    <!--            <field name="view_mode">tree,form,pivot</field>-->
+    <!--            <field name="search_view_id" ref="view_op_batch_search"/>-->
+    <!--            <field name="domain">[]</field>-->
+    <!--            <field name="context">{}</field>-->
+    <!--        </record>-->
+
+    <record id="action_redirect_op_batch" model="ir.actions.server">
+        <field name="name">Redirect to Batch</field>
+        <field name="model_id" ref="base.model_ir_actions_server"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Batch',
+            'view_mode': 'tree,kanban,form',
+            'res_model': 'op.batch',
+            'target': 'current',
+            }
+        </field>
+    </record>
+
+    <record id="action_redirect_op_course" model="ir.actions.server">
+        <field name="name">Redirect to Course</field>
+        <field name="model_id" ref="base.model_ir_actions_server"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Courses',
+            'view_mode': 'tree,kanban,form',
+            'res_model': 'op.course',
+            'target': 'current',
+            'context': {'group_by': 'department_id'},
+            }
+        </field>
+    </record>
+
+    <record id="action_redirect_op_classes" model="ir.actions.server">
+        <field name="name">Redirect to Class</field>
+        <field name="model_id" ref="base.model_ir_actions_server"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Class',
+            'view_mode': 'tree,form',
+            'res_model': 'op.classroom',
+            'target': 'current',
+            }
+        </field>
+    </record>
+
+    <record id="action_redirect_op_students" model="ir.actions.server">
+        <field name="name">Redirect to Students</field>
+        <field name="model_id" ref="base.model_ir_actions_server"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Students',
+            'view_mode': 'kanban,tree,form',
+            'res_model': 'op.student',
+            'target': 'current',
+            }
+        </field>
+    </record>
+
+    <record id="action_redirect_op_dept" model="ir.actions.server">
+        <field name="name">Redirect to Department</field>
+        <field name="model_id" ref="base.model_ir_actions_server"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Department',
+            'view_mode': 'kanban,tree,form',
+            'res_model': 'op.department',
+            'target': 'current',
+            'context': {'group_by': 'category_id'},
+            }
+        </field>
+    </record>
+    <record id="action_redirect_op_category" model="ir.actions.server">
+        <field name="name">Redirect to Category</field>
+        <field name="model_id" ref="base.model_ir_actions_server"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Category',
+            'view_mode': 'kanban,tree,form',
+            'res_model': 'op.category',
+            'target': 'current',
+            }
+        </field>
+    </record>
+
+<!--    <record id="action_redirect_op_branch" model="ir.actions.server">-->
+<!--        <field name="name">Redirect to Branches</field>-->
+<!--        <field name="model_id" ref="base.model_ir_actions_server"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">-->
+<!--            action = {-->
+<!--            'type': 'ir.actions.act_window',-->
+<!--            'name': 'Branch',-->
+<!--            'view_mode': 'tree,form',-->
+<!--            'res_model': 'logic.branches',-->
+<!--            'target': 'current',-->
+<!--            }-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <menuitem name="Logic Base" id="main_menu_logic_base_batch"
+              action="action_redirect_op_students"
+              web_icon="logic_base_17,description/static/icon.png"
+              sequence="2"/>
+
+    <menuitem name="Batches" id="menu_logic_base_batch"
+              action="action_redirect_op_batch"
+              parent="main_menu_logic_base_batch"
+              sequence="2"/>
+
+    <menuitem name="Departments" id="menu_logic_base_department"
+              action="action_redirect_op_dept"
+              parent="main_menu_logic_base_batch"
+              sequence="6"/>
+
+<!--    <menuitem name="Branches" id="menu_logic_base_branches"-->
+<!--              action="action_redirect_op_branch"-->
+<!--              parent="main_menu_logic_base_batch"-->
+<!--              sequence="6"/>-->
+
+
+
+
+    <menuitem name="Students" id="menu_logic_base_students"
+              action="action_redirect_op_students"
+              parent="main_menu_logic_base_batch"
+              sequence="1"/>
+
+    <menuitem name="Category" id="menu_logic_base_category"
+              action="action_redirect_op_category"
+              parent="main_menu_logic_base_batch"
+              sequence="5"/>
+
+    <menuitem name="Courses" id="menu_logic_base_course"
+              action="action_redirect_op_course"
+              parent="main_menu_logic_base_batch"
+              sequence="3"/>
+</odoo>

@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_logic_batch,access_logic_batch,model_logic_batches,,1,1,1,1
+access_logic_branches,access_logic_branches,model_op_branch,,1,1,1,1
+access_op_class_room,access_op_class_room,model_op_class,,1,1,1,1
+
+access_op_class_admission_team,access_op_class_admission_team,model_op_class,openeducat_core.group_op_admission_team,1,0,0,0
+access_op_class_accounts,access_op_class_accounts,model_op_class,openeducat_core.group_op_accounts,1,1,1,1
+access_op_class_admin,access_op_class_admin,model_op_class,openeducat_core.group_op_admin,1,1,1,1
+access_op_class_admission_manager,access_op_class_admission_manager,model_op_class,openeducat_core.group_op_admission_manager,1,1,1,1
+
+access_logic_branches_admission_team,access_logic_branches_admission_team,model_op_branch,openeducat_core.group_op_admission_team,1,0,0,0
+access_logic_branches_accounts,access_logic_branches_accounts,model_op_branch,openeducat_core.group_op_accounts,1,1,1,1
+access_op_branch_admin,access_op_branch_admin,model_op_branch,openeducat_core.group_op_admin,1,1,1,1
+access_op_branch_admission_manager,access_op_branch_admission_manager,model_op_branch,openeducat_core.group_op_admission_manager,1,1,0,0
