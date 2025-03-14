@@ -230,16 +230,16 @@
                                 <span>999293</span>
                             </td>
                             <td align="center" class="table_value_border">
-                                <span t-esc="'₹ ' + str(doc.amount_exc_tax)"/>
+                                <span t-esc="'₹  {:.2f}'.format(doc.amount_exc_tax)"/>
                             </td>
                             <td align="center" class="table_value_border">
-                                <span t-esc="'₹ ' + str(doc.cgst_amount)"/>
+                                <span t-esc="'₹  {:.2f}'.format(doc.cgst_amount)"/>
                             </td>
                             <td align="center" class="table_value_border">
-                                <span t-esc="'₹ ' + str(doc.sgst_amount)"/>
+                                <span t-esc="'₹ {:.2f}'.format(doc.sgst_amount)"/>
                             </td>
                             <td align="center" class="table_value_border">
-                                <span t-esc="'₹ ' + str(doc.amount_inc_tax)"/>
+                                <span t-esc="'₹  {:.2f}'.format(doc.amount_inc_tax)"/>
                             </td>
                         </tr>
                         <!--                        <tr>-->
@@ -551,7 +551,7 @@
                                     <span t-esc="doc.fee_type"/>
                                 </td>
                                 <td class="table_value_border" align="center">
-                                    <span t-esc="'₹ ' + str(doc.total_amount)"/>
+                                    <span t-esc="'₹ {:.2f}'.format(doc.total_amount)"/>
                                 </td>
                             </tr>
                         </t>

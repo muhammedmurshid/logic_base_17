@@ -48,7 +48,6 @@
                 <field name="name"/>
                 <field name="coordinator_id"/>
             </tree>
-
         </field>
     </record>
 
@@ -160,21 +159,6 @@
         </field>
     </record>
 
-<!--    <record id="action_redirect_op_branch" model="ir.actions.server">-->
-<!--        <field name="name">Redirect to Branches</field>-->
-<!--        <field name="model_id" ref="base.model_ir_actions_server"/>-->
-<!--        <field name="state">code</field>-->
-<!--        <field name="code">-->
-<!--            action = {-->
-<!--            'type': 'ir.actions.act_window',-->
-<!--            'name': 'Branch',-->
-<!--            'view_mode': 'tree,form',-->
-<!--            'res_model': 'logic.branches',-->
-<!--            'target': 'current',-->
-<!--            }-->
-<!--        </field>-->
-<!--    </record>-->
-
     <menuitem name="Logic Base" id="main_menu_logic_base_batch"
               action="action_redirect_op_students"
               web_icon="logic_base_17,description/static/icon.png"
@@ -189,14 +173,6 @@
               action="action_redirect_op_dept"
               parent="main_menu_logic_base_batch"
               sequence="6"/>
-
-<!--    <menuitem name="Branches" id="menu_logic_base_branches"-->
-<!--              action="action_redirect_op_branch"-->
-<!--              parent="main_menu_logic_base_batch"-->
-<!--              sequence="6"/>-->
-
-
-
 
     <menuitem name="Students" id="menu_logic_base_students"
               action="action_redirect_op_students"
