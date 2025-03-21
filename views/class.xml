@@ -89,7 +89,6 @@
     <!--            </field>-->
     <!--        </record>-->
 
-
     <record model="ir.actions.act_window" id="act_open_op_class_view">
         <field name="name">Class</field>
         <field name="type">ir.actions.act_window</field>
@@ -101,6 +100,5 @@
               action="act_open_op_class_view"
               parent="main_menu_logic_base_batch"
               sequence="4"/>
-
 
 </odoo>

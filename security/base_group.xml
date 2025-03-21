@@ -6,7 +6,7 @@
         <field name="visible" eval="0"/>
     </record>
     <record id="base_admin" model="res.groups">
-        <field name="name">Base Manager</field>
+        <field name="name">Super Admin</field>
         <field name="category_id" ref="base_users_admin_group"/>
     </record>
 </odoo>
