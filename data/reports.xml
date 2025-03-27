@@ -12,19 +12,14 @@
             object.invoice_no.split('/')[-1] if object.invoice_no else ''
             )
         </field>
-        <field   name="binding_model_id" ref="openeducat_core.model_fee_payment_history"/>
+        <field name="binding_model_id" ref="openeducat_core.model_fee_payment_history"/>
         <field name="binding_type">report</field>
     </record>
     <template id="report_student_payment_history">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.basic_layout">
-                    <div class="page">
-                        <div class="text-middle" style="text-align:center;">
-                            <h4>Invoice cum Receipt</h4>
-                            <h6>Original Copy</h6>
-                        </div>
-                    </div>
+
                     <style type="text/css">
                         .table_head_border {
                         text-align : center;
@@ -69,65 +64,44 @@
                                           t-options='{"widget": "contact", "fields": ["name", "address", "phone", "acc_number", "vat"], "no_marker": True}'/>
 
                                 </td>
-
+                                <h4 align="center">Invoice</h4>
                             </tr>
                         </table>
                     </div>
                     <!--                                </table>-->
                     <br></br>
-                    <br></br>
-                    <table align="left" width="50%">
-                        <tr align="left">
+
+                    <table width="100%">
+                        <tr>
                             <td>
                                 <strong>Date</strong>
                                 <!--                                        </td>-->
                                 <!--                                        <td>-->
 
                             </td>
-                            <td align="left">:&amp;nbsp;
+                            <td>:
                                 <span t-field="doc.date"/>
                             </td>
                         </tr>
-                        <tr align="left">
+                        <tr>
                             <td>
                                 <strong>Invoice No</strong>
                                 <!--                                        </td>-->
                                 <!--                                        <td>-->
 
                             </td>
-                            <td align="left">:&amp;nbsp;
-                                <span t-field="doc.invoice_no"/>
+                            <td>:
+                                <span t-field="doc.voucher_no"/>
                             </td>
                         </tr>
-                    </table>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-
-                    <table width="100%">
                         <tr>
-<!--                            <td>-->
-<!--                                <strong>Billed To</strong>-->
-<!--                            </td>-->
-<!--                            <td>:&amp;nbsp;</td>-->
-<!--                            <td align="right">-->
-<!--                                <span>-->
-<!--                                    <strong>Payment Mode</strong>-->
-<!--                                </span>-->
-<!--                            </td>-->
-<!--                            <td align="left">:&amp;nbsp;-->
-<!--                                <span t-field="doc.payment_mode"/>-->
-<!--                            </td>-->
-                        </tr>
-                        <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <strong>Name</strong>
                             </td>
                             <td>:&amp;nbsp;
                                 <span t-field="doc.payment_id.name"/>
                             </td>
-                            <td align="right">
+                            <td>
                                 <span>
                                     <strong>Branch</strong>
                                 </span>
@@ -136,18 +110,18 @@
                             <td>:&amp;nbsp;
                                 <span t-field="doc.payment_id.branch_id.name"/>
                             </td>
-<!--                            <td align="right">-->
-<!--                                <span>-->
-<!--                                    <strong>Cheque No/Reference No</strong>-->
-<!--                                </span>-->
-<!--                            </td>-->
-<!--                            <td>:&amp;nbsp;-->
-<!--                                <span t-field="doc.cheque_no"/>-->
-<!--                            </td>-->
+                            <!--                            <td>-->
+                            <!--                                <span>-->
+                            <!--                                    <strong>Cheque No/Reference No</strong>-->
+                            <!--                                </span>-->
+                            <!--                            </td>-->
+                            <!--                            <td>:&amp;nbsp;-->
+                            <!--                                <span t-field="doc.cheque_no"/>-->
+                            <!--                            </td>-->
 
                         </tr>
                         <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <span>
                                     <strong>Batch</strong>
                                 </span>
@@ -157,7 +131,7 @@
                                 <span t-field="doc.payment_id.batch_id.name"/>
                             </td>
 
-                            <td align="right">
+                            <td>
                                 <span>
                                     <strong>Course</strong>
                                 </span>
@@ -166,11 +140,11 @@
                                 <span t-field="doc.payment_id.course_id.name"/>
                             </td>
                         </tr>
-<!--                        <tr>-->
-<!--                            -->
-<!--                        </tr>-->
+                        <!--                        <tr>-->
+                        <!--                            -->
+                        <!--                        </tr>-->
                         <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <span>
                                     <strong>Address</strong>
                                 </span>
@@ -178,7 +152,7 @@
                             <td>:&amp;nbsp;
                                 <span t-field="doc.payment_id.street"/>
                             </td>
-                            <td align="right">
+                            <td>
                                 <span>
                                     <strong>Admission No</strong>
                                 </span>
@@ -189,7 +163,7 @@
 
                         </tr>
                         <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <span>
                                     <strong>State</strong>
                                 </span>
@@ -197,6 +171,7 @@
                                     <span t-field="doc.payment_id.state_id.name"/>
                                 </td>
                             </td>
+
                         </tr>
 
                     </table>
@@ -301,12 +276,6 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.basic_layout">
-                    <div class="page">
-                        <div class="text-middle" style="text-align:center;">
-                            <h4>Receipt</h4>
-                            <!--                            <h6>Original Copy</h6>-->
-                        </div>
-                    </div>
                     <style type="text/css">
                         .table_head_border {
                         text-align : center;
@@ -351,58 +320,44 @@
                                           t-options='{"widget": "contact", "fields": ["name", "address", "phone", "acc_number", "vat"], "no_marker": True}'/>
 
                                 </td>
-
+                                <h4 align="center">Receipt</h4>
                             </tr>
                         </table>
                     </div>
                     <!--                                </table>-->
                     <br></br>
-                    <br></br>
-                    <table align="left" width="50%">
-                        <tr align="left">
+
+                    <table width="100%">
+                        <tr>
                             <td>
                                 <strong>Date</strong>
                                 <!--                                        </td>-->
                                 <!--                                        <td>-->
 
                             </td>
-                            <td align="left">:&amp;nbsp;
+                            <td>:
                                 <span t-field="doc.date"/>
                             </td>
                         </tr>
-                        <tr align="left">
+                        <tr>
                             <td>
-                                <strong>Invoice No</strong>
+                                <strong>Receipt No</strong>
                                 <!--                                        </td>-->
                                 <!--                                        <td>-->
 
                             </td>
-                            <td align="left">:&amp;nbsp;
-                                <span t-field="doc.invoice_no"/>
+                            <td>:
+                                <span t-field="doc.voucher_no"/>
                             </td>
                         </tr>
-                    </table>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-
-                    <table width="100%">
                         <tr>
-                            <td>
-                                <strong>Billed To</strong>
-                            </td>
-                            <td>:&amp;nbsp;</td>
-                            <td align="right">
-                                <span>
-                                    <strong>Payment Mode</strong>
-                                </span>
-                            </td>
-                            <td align="left">:&amp;nbsp;
-                                <span t-field="doc.payment_mode"/>
-                            </td>
+                            <!--                            <td>-->
+                            <!--                                <strong>Billed To</strong>-->
+                            <!--                            </td>-->
+
+
                             <!--                            <br/>-->
-                            <!--                            <td align="right">-->
+                            <!--                            <td>-->
                             <!--                                <span>-->
                             <!--                                    <strong>Payment Type</strong>-->
                             <!--                                </span>-->
@@ -412,144 +367,111 @@
                             <!--                            </td>-->
                         </tr>
                         <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <strong>Name</strong>
                             </td>
-                            <td>:&amp;nbsp;
+                            <td>:
                                 <span t-field="doc.payment_id.name"/>
                             </td>
-<!--                            <td align="right">-->
-<!--                                <span>-->
-<!--                                    <strong>Cheque No/Reference No</strong>-->
-<!--                                </span>-->
-<!--                            </td>-->
-<!--                            <td>:&amp;nbsp;-->
-<!--                                <span t-field="doc.cheque_no"/>-->
-<!--                            </td>-->
-
-                        </tr>
-                        <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <span>
                                     <strong>Batch</strong>
                                 </span>
                             </td>
 
-                            <td>:&amp;nbsp;
+                            <td>:
                                 <span t-field="doc.payment_id.batch_id.name"/>
                             </td>
 
-                            <td align="right">
-                                <span>
-                                    <strong>Course</strong>
-                                </span>
-                            </td>
-                            <td>:&amp;nbsp;
-                                <span t-field="doc.payment_id.course_id.name"/>
-                            </td>
+
                         </tr>
                         <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <span>
                                     <strong>Branch</strong>
                                 </span>
                             </td>
 
-                            <td>:&amp;nbsp;
+                            <td>:
                                 <span t-field="doc.payment_id.branch_id.name"/>
                             </td>
+                            <td>
+                                <span>
+                                    <strong>Course</strong>
+                                </span>
+                            </td>
+                            <td>:
+                                <span t-field="doc.payment_id.course_id.name"/>
+                            </td>
                         </tr>
+
                         <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <span>
                                     <strong>Address</strong>
                                 </span>
                             </td>
-                            <td>:&amp;nbsp;
+                            <td>:
                                 <span t-field="doc.payment_id.street"/>
                             </td>
-                            <td align="right">
+                            <td>
                                 <span>
                                     <strong>Admission No</strong>
                                 </span>
                             </td>
-                            <td>:&amp;nbsp;
+                            <td>:
                                 <span t-field="doc.payment_id.gr_no"/>
                             </td>
 
                         </tr>
                         <tr>
-                            <td style="padding-top:10px;">
+                            <td>
                                 <span>
                                     <strong>State</strong>
                                 </span>
-                                <td>:&amp;nbsp;
+                                <td>:
                                     <span t-field="doc.payment_id.state_id.name"/>
                                 </td>
                             </td>
-                            <td align="right">
+                            <td>
                                 <span>
-                                    <strong>Payment Type</strong>
+                                    <strong>Payment Mode</strong>
                                 </span>
                             </td>
-                            <td>:&amp;nbsp;
-                                <span t-field="doc.fee_name"/>
+                            <td>:
+                                <span t-field="doc.payment_mode"/>
                             </td>
+                            <!--                            <td>-->
+                            <!--                                <span>-->
+                            <!--                                    <strong>Payment Type</strong>-->
+                            <!--                                </span>-->
+                            <!--                            </td>-->
+                            <!--                            <td>:&amp;nbsp;-->
+                            <!--                                <span t-field="doc.fee_name"/>-->
+                            <!--                            </td>-->
                         </tr>
 
                     </table>
 
                     <br></br>
-
                     <table width="100%" border="1" style="border-collapse: collapse;">
                         <tr>
-                            <td class="table_value_border" align="center">
-                                <b>Sl No</b>
+                            <td class="table_value_border" style="padding-left: 14px;">
+                                <b>Total Amount:</b>
                             </td>
                             <td class="table_value_border" align="center">
-                                <b>Fee Name</b>
-                            </td>
-                            <td class="table_value_border" align="center">
-                                <b>Amount</b>
+                                <span t-esc="'₹ {:.2f}'.format(sum(doc.credit_amount for doc in docs))"/>
                             </td>
                         </tr>
-
-                        <t t-set="sl_no" t-value="0"/>
-                        <t t-foreach="docs" t-as="doc">
-                            <t t-set="sl_no" t-value="sl_no + 1"/>
-                            <tr>
-                                <td class="table_value_border" align="center">
-                                    <span t-esc="sl_no"/>
-                                </td>
-                                <td class="table_value_border" align="center">
-                                    <span t-esc="doc.fee_type"/>
-                                </td>
-                                <td class="table_value_border" align="center">
-                                    <span t-esc="'₹ {:.2f}'.format(doc.total_amount)"/>
-                                </td>
-                            </tr>
-                        </t>
-
                         <tr>
-                            <td class="table_value_border" colspan="2" style="padding-left: 14px;">
+                            <td class="table_value_border" style="padding-left: 14px;">
                                 <b>Total Amount Received in Words:</b>
                             </td>
                             <td class="table_value_border" align="center">
-                                <span t-esc="doc.amount_in_words_non_tax"/>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="table_value_border" colspan="3" align="center">
-                                <i>Cheque Payment subject to realization only and Fees once paid will not be refunded.
-                                </i>
+                                <span t-esc="docs[0].amount_in_words_non_tax if docs else ''"/>
                             </td>
                         </tr>
                     </table>
-
-
-                    <br></br>
-                    <br></br>
                     <br></br>
 
                     <table>
