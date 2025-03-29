@@ -121,7 +121,7 @@
             action = {
             'type': 'ir.actions.act_window',
             'name': 'Students',
-            'view_mode': 'kanban,tree,form',
+            'view_mode': 'tree,kanban,form',
             'res_model': 'op.student',
             'target': 'current',
             'context': {'search_default_current_month': 1}
