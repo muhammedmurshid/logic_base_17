@@ -98,7 +98,7 @@
     </record>
     <menuitem name="Class" id="menu_logic_base_class_room"
               action="act_open_op_class_view"
-              parent="main_menu_logic_base_batch"
+              parent="menu_logic_base_settings"
               sequence="4"/>
 
 </odoo>

@@ -159,6 +159,10 @@
         </field>
     </record>
 
+    <menuitem name="Configuration" id="menu_logic_base_settings"
+              parent="main_menu_logic_base_batch"
+              sequence="10"/>
+
     <menuitem name="Logic Base" id="main_menu_logic_base_batch"
               action="action_redirect_op_students"
               web_icon="logic_base_17,description/static/icon.png"
@@ -169,10 +173,10 @@
               parent="main_menu_logic_base_batch"
               sequence="2"/>
 
-    <menuitem name="Departments" id="menu_logic_base_department"
+    <menuitem name="Main Courses" id="menu_logic_base_department"
               action="action_redirect_op_dept"
               parent="main_menu_logic_base_batch"
-              sequence="6"/>
+              sequence="4"/>
 
     <menuitem name="Students" id="menu_logic_base_students"
               action="action_redirect_op_students"
@@ -181,11 +185,11 @@
 
     <menuitem name="Category" id="menu_logic_base_category"
               action="action_redirect_op_category"
-              parent="main_menu_logic_base_batch"
+              parent="menu_logic_base_settings"
               sequence="5"/>
 
     <menuitem name="Courses" id="menu_logic_base_course"
               action="action_redirect_op_course"
-              parent="main_menu_logic_base_batch"
+              parent="menu_logic_base_settings"
               sequence="3"/>
 </odoo>

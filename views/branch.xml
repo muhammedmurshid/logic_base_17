@@ -51,7 +51,7 @@
               sequence="5"/>
 
      <menuitem name="Branches" id="logic_branches_menu"
-              parent="main_menu_logic_base_batch"
+              parent="menu_logic_base_settings"
               action="logic_branches_action"
               sequence="5"/>
 </odoo>
