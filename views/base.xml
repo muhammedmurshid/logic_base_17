@@ -136,7 +136,7 @@
         <field name="code">
             action = {
             'type': 'ir.actions.act_window',
-            'name': 'Department',
+            'name': 'Main Courses',
             'view_mode': 'kanban,tree,form',
             'res_model': 'op.department',
             'target': 'current',

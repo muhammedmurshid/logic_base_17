@@ -8,4 +8,5 @@ class LogicBranches(models.Model):
 
     name = fields.Char(string="Branch Name", required=1)
     branch_head_id = fields.Many2one('res.users', string="Branch Head", required=1)
+    # active = fields.Boolean(string='Active', default=True)
 
