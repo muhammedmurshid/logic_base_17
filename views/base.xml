@@ -173,23 +173,29 @@
               parent="main_menu_logic_base_batch"
               sequence="2"/>
 
-    <menuitem name="Main Courses" id="menu_logic_base_department"
-              action="action_redirect_op_dept"
-              parent="main_menu_logic_base_batch"
-              sequence="4"/>
 
     <menuitem name="Students" id="menu_logic_base_students"
               action="action_redirect_op_students"
               parent="main_menu_logic_base_batch"
               sequence="1"/>
 
+    <menuitem name="Courses" id="menu_logic_base_main_course"
+
+              parent="main_menu_logic_base_batch"
+              sequence="3"/>
+    <menuitem name="Main Courses" id="menu_logic_base_department"
+              action="action_redirect_op_dept"
+              parent="menu_logic_base_main_course"
+              sequence="1"/>
+
+
     <menuitem name="Category" id="menu_logic_base_category"
               action="action_redirect_op_category"
               parent="menu_logic_base_settings"
               sequence="5"/>
 
-    <menuitem name="Courses" id="menu_logic_base_course"
+    <menuitem name="Sub Courses" id="menu_logic_base_course"
               action="action_redirect_op_course"
-              parent="menu_logic_base_settings"
+              parent="menu_logic_base_main_course"
               sequence="3"/>
 </odoo>

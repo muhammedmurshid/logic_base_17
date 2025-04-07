@@ -12,6 +12,7 @@
                             <field name="create_date" widget="date" string="Added Date"/>
                             <field name="name" style="background:#fac17f;"/>
                             <field name="branch_head_id"/>
+                            <field name="active" invisible="1"/>
                         </group>
                     </group>
                 </sheet>
