@@ -108,7 +108,7 @@
                             </td>
 
                             <td>:&amp;nbsp;
-                                <span t-field="doc.payment_id.branch_id.name"/>
+                                <span t-field="doc.branch_name"/>
                             </td>
                             <!--                            <td>-->
                             <!--                                <span>-->
@@ -128,7 +128,7 @@
                             </td>
 
                             <td>:&amp;nbsp;
-                                <span t-field="doc.payment_id.batch_id.name"/>
+                                <span t-field="doc.batch_name"/>
                             </td>
 
                             <td>
@@ -137,7 +137,7 @@
                                 </span>
                             </td>
                             <td>:&amp;nbsp;
-                                <span t-field="doc.payment_id.course_id.name"/>
+                                <span t-field="doc.course_name"/>
                             </td>
                         </tr>
                         <!--                        <tr>-->
@@ -380,7 +380,7 @@
                             </td>
 
                             <td>:
-                                <span t-field="doc.payment_id.batch_id.name"/>
+                                <span t-field="doc.batch_name"/>
                             </td>
 
 
@@ -393,7 +393,7 @@
                             </td>
 
                             <td>:
-                                <span t-field="doc.payment_id.branch_id.name"/>
+                                <span t-field="doc.branch_name"/>
                             </td>
                             <td>
                                 <span>
@@ -401,7 +401,7 @@
                                 </span>
                             </td>
                             <td>:
-                                <span t-field="doc.payment_id.course_id.name"/>
+                                <span t-field="doc.course_name"/>
                             </td>
                         </tr>
 

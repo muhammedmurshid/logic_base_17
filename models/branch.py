@@ -17,3 +17,4 @@ class LogicBranches(models.Model):
     def action_unarchive(self):
         for record in self:
             record.active = True
+
