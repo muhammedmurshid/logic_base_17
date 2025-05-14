@@ -120,10 +120,27 @@
         <field name="code">
             action = {
             'type': 'ir.actions.act_window',
-            'name': 'Students',
+            'name': 'Students List',
             'view_mode': 'tree,kanban,form',
             'res_model': 'op.student',
             'target': 'current',
+            'context': {'search_default_current_month': 1}
+            }
+        </field>
+    </record>
+
+    <record id="action_redirect_op_students_enrollment_list" model="ir.actions.server">
+        <field name="name">Redirect to Students Enrollment List</field>
+        <field name="model_id" ref="base.model_ir_actions_server"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Enrollment List',
+            'view_mode': 'tree,kanban,form',
+            'res_model': 'op.student',
+            'target': 'current',
+            'domain': [('enrolled', '=', 1)],
             'context': {'search_default_current_month': 1}
             }
         </field>
@@ -171,7 +188,7 @@
     <menuitem name="Batches" id="menu_logic_base_batch"
               action="action_redirect_op_batch"
               parent="main_menu_logic_base_batch"
-              sequence="2"/>
+              sequence="3"/>
 
 
     <menuitem name="Students" id="menu_logic_base_students"
@@ -179,10 +196,15 @@
               parent="main_menu_logic_base_batch"
               sequence="1"/>
 
+    <menuitem name="Enrollment List" id="menu_logic_base_students_enrollment_list"
+              action="action_redirect_op_students_enrollment_list"
+              parent="main_menu_logic_base_batch"
+              sequence="2"/>
+
     <menuitem name="Courses" id="menu_logic_base_main_course"
 
               parent="main_menu_logic_base_batch"
-              sequence="3"/>
+              sequence="4"/>
     <menuitem name="Main Courses" id="menu_logic_base_department"
               action="action_redirect_op_dept"
               parent="menu_logic_base_main_course"
