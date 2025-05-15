@@ -7,6 +7,10 @@
     </record>
     <record id="base_admin" model="res.groups">
         <field name="name">Super Admin</field>
-        <field name="category_id" ref="base_users_admin_group"/>
+        <field name="category_id" ref="logic_base_17.base_users_admin_group"/>
+    </record>
+    <record id="base_users_common" model="res.groups">
+        <field name="name">Base Users</field>
+        <field name="category_id" ref="logic_base_17.base_users_admin_group"/>
     </record>
 </odoo>
