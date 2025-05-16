@@ -16,7 +16,7 @@
     <record id="group_hr_user_base" model="res.groups">
         <field name="name">Officer: Manage Own Datas</field>
         <field name="category_id" ref="base.module_category_human_resources_employees"/>
-        <field name="implied_ids" eval="[(6, 0, [ref('base.group_user')])]"/>
+<!--        <field name="implied_ids" eval="[(6, 0, [ref('base.group_user')])]"/>-->
         <field name="comment">The user will be able to only read permission.</field>
     </record>
 
