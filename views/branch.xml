@@ -51,8 +51,19 @@
               action="logic_branches_action"
               sequence="5"/>
 
-     <menuitem name="Branches" id="logic_branches_menu"
+    <menuitem name="Branches" id="logic_branches_menu"
               parent="menu_logic_base_settings"
               action="logic_branches_action"
               sequence="5"/>
+
+    <record id="hr_employee_branch_inherit_form_view" model="ir.ui.view">
+        <field name="name">branch.inherit.hr</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_email']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

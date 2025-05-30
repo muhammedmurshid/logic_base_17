@@ -38,7 +38,4 @@
 <!--        </field>-->
 <!--        <field name="groups" eval="[(4, ref('openeducat_core.group_op_class_coordinators'))]"/>-->
 <!--    </record>-->
-
-
-
 </odoo>
