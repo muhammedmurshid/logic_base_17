@@ -22,7 +22,8 @@
         'views/branch.xml',
         'views/class.xml',
         'data/reports.xml',
-        'views/inherit_branch.xml'
+        'views/inherit_branch.xml',
+        'views/user_inheritance.xml'
 
     ],
 
