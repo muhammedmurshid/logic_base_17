@@ -113,6 +113,28 @@
         </field>
     </record>
 
+    <record id="action_re_direct_integrated_students" model="ir.actions.server">
+        <field name="name">Redirect to Integrated Students</field>
+        <field name="model_id" ref="base.model_ir_actions_server"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Class',
+            'view_mode': 'tree,form',
+            'res_model': 'op.student',
+            'target': 'current',
+            'domain': [('integrated_student', '=', 1)],
+            "views": [
+            (env.ref("openeducat_core.view_op_student_tree_integrated").id, "tree"),
+            (env.ref("openeducat_core.kanban_view_student").id, "kanban"),
+            (env.ref("openeducat_core.view_op_student_form").id, "form"),
+            ],
+            }
+
+        </field>
+    </record>
+
     <record id="action_redirect_op_students" model="ir.actions.server">
         <field name="name">Redirect to Students</field>
         <field name="model_id" ref="openeducat_core.model_op_student"/>
@@ -125,6 +147,7 @@
             "view_mode": "tree,kanban,form",
             "target": "current",
             "context": {"search_default_current_month": 1},
+            'domain': [('integrated_student', '!=', 1)],
             "views": [
             (env.ref("openeducat_core.view_op_student_tree").id, "tree"),
             (env.ref("openeducat_core.kanban_view_student").id, "kanban"),
@@ -133,7 +156,6 @@
             }
         </field>
     </record>
-
 
     <record id="action_redirect_op_students_enrollment_list" model="ir.actions.server">
         <field name="name">Redirect to Students Enrollment List</field>
@@ -173,6 +195,7 @@
             }
         </field>
     </record>
+
     <record id="action_redirect_op_category" model="ir.actions.server">
         <field name="name">Redirect to Category</field>
         <field name="model_id" ref="base.model_ir_actions_server"/>
@@ -188,6 +211,28 @@
         </field>
     </record>
 
+    <record id="view_op_student_tree_no_create" model="ir.ui.view">
+        <field name="name">op.student.tree.no.create</field>
+        <field name="model">op.student</field>
+        <field name="inherit_id" ref="openeducat_core.view_op_student_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_op_enrollment_student_tree_no_create" model="ir.ui.view">
+        <field name="name">op.student.tree.enrollment.no.create</field>
+        <field name="model">op.student</field>
+        <field name="inherit_id" ref="openeducat_core.view_op_student_tree_enrollment"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <menuitem name="Configuration" id="menu_logic_base_settings"
               parent="main_menu_logic_base_batch"
               sequence="10"/>
@@ -200,8 +245,7 @@
     <menuitem name="Batches" id="menu_logic_base_batch"
               action="action_redirect_op_batch"
               parent="main_menu_logic_base_batch"
-              sequence="3"/>
-
+              sequence="4"/>
 
     <menuitem name="Students" id="menu_logic_base_students"
               action="action_redirect_op_students"
@@ -212,21 +256,23 @@
               action="action_redirect_op_students_enrollment_list"
               parent="main_menu_logic_base_batch"
               sequence="2"/>
+    <menuitem name="Integrated Students" id="menu_integrated_students_menu"
+              action="action_re_direct_integrated_students"
+              parent="main_menu_logic_base_batch"
+              sequence="3"/>
 
     <menuitem name="Courses" id="menu_logic_base_main_course"
-
               parent="main_menu_logic_base_batch"
-              sequence="4"/>
+              sequence="5"/>
     <menuitem name="Main Courses" id="menu_logic_base_department"
               action="action_redirect_op_dept"
               parent="menu_logic_base_main_course"
               sequence="1"/>
 
-
     <menuitem name="Category" id="menu_logic_base_category"
               action="action_redirect_op_category"
               parent="menu_logic_base_settings"
-              sequence="5"/>
+              sequence="6"/>
 
     <menuitem name="Sub Courses" id="menu_logic_base_course"
               action="action_redirect_op_course"

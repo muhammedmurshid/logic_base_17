@@ -3,7 +3,6 @@
     <record model="ir.module.category" id="base_users_admin_group">
         <field name="name">Base Admin</field>
         <field name="sequence">21</field>
-        <field name="visible" eval="0"/>
     </record>
     <record id="base_admin" model="res.groups">
         <field name="name">Super Admin</field>
