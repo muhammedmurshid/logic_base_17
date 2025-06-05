@@ -188,27 +188,27 @@
         </field>
     </record>
 
-    <record id="view_op_student_tree_no_create" model="ir.ui.view">
-        <field name="name">op.student.tree.no.create</field>
-        <field name="model">op.student</field>
-        <field name="inherit_id" ref="openeducat_core.view_op_student_tree"/>
-        <field name="arch" type="xml">
-            <xpath expr="//tree" position="attributes">
-                <attribute name="create">false</attribute>
-            </xpath>
-        </field>
-    </record>
+<!--    <record id="view_op_student_tree_no_create" model="ir.ui.view">-->
+<!--        <field name="name">op.student.tree.no.create</field>-->
+<!--        <field name="model">op.student</field>-->
+<!--        <field name="inherit_id" ref="openeducat_core.view_op_student_tree"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//tree" position="attributes">-->
+<!--                <attribute name="create">false</attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
 
-    <record id="view_op_enrollment_student_tree_no_create" model="ir.ui.view">
-        <field name="name">op.student.tree.enrollment.no.create</field>
-        <field name="model">op.student</field>
-        <field name="inherit_id" ref="openeducat_core.view_op_student_tree_enrollment"/>
-        <field name="arch" type="xml">
-            <xpath expr="//tree" position="attributes">
-                <attribute name="create">false</attribute>
-            </xpath>
-        </field>
-    </record>
+<!--    <record id="view_op_enrollment_student_tree_no_create" model="ir.ui.view">-->
+<!--        <field name="name">op.student.tree.enrollment.no.create</field>-->
+<!--        <field name="model">op.student</field>-->
+<!--        <field name="inherit_id" ref="openeducat_core.view_op_student_tree_enrollment"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//tree" position="attributes">-->
+<!--                <attribute name="create">false</attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <menuitem name="Configuration" id="menu_logic_base_settings"
               parent="main_menu_logic_base_batch"
