@@ -113,28 +113,6 @@
         </field>
     </record>
 
-    <record id="action_re_direct_integrated_students" model="ir.actions.server">
-        <field name="name">Redirect to Integrated Students</field>
-        <field name="model_id" ref="base.model_ir_actions_server"/>
-        <field name="state">code</field>
-        <field name="code">
-            action = {
-            'type': 'ir.actions.act_window',
-            'name': 'Class',
-            'view_mode': 'tree,form',
-            'res_model': 'op.student',
-            'target': 'current',
-            'domain': [('integrated_student', '=', 1)],
-            "views": [
-            (env.ref("openeducat_core.view_op_student_tree_integrated").id, "tree"),
-            (env.ref("openeducat_core.kanban_view_student").id, "kanban"),
-            (env.ref("openeducat_core.view_op_student_form").id, "form"),
-            ],
-            }
-
-        </field>
-    </record>
-
     <record id="action_redirect_op_students" model="ir.actions.server">
         <field name="name">Redirect to Students</field>
         <field name="model_id" ref="openeducat_core.model_op_student"/>
@@ -147,7 +125,6 @@
             "view_mode": "tree,kanban,form",
             "target": "current",
             "context": {"search_default_current_month": 1},
-            'domain': [('integrated_student', '!=', 1)],
             "views": [
             (env.ref("openeducat_core.view_op_student_tree").id, "tree"),
             (env.ref("openeducat_core.kanban_view_student").id, "kanban"),
@@ -256,10 +233,6 @@
               action="action_redirect_op_students_enrollment_list"
               parent="main_menu_logic_base_batch"
               sequence="2"/>
-    <menuitem name="Integrated Students" id="menu_integrated_students_menu"
-              action="action_re_direct_integrated_students"
-              parent="main_menu_logic_base_batch"
-              sequence="3"/>
 
     <menuitem name="Courses" id="menu_logic_base_main_course"
               parent="main_menu_logic_base_batch"
