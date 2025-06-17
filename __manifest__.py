@@ -23,8 +23,8 @@
         'views/class.xml',
         'data/reports.xml',
         'views/inherit_branch.xml',
-        'views/user_inheritance.xml',
-        'views/employee_inheritance.xml'
+        # 'views/user_inheritance.xml',
+        # 'views/employee_inheritance.xml'
 
     ],
 
