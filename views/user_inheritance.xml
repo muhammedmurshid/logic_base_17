@@ -9,9 +9,9 @@
                 <field name="designation"/>
                 <field name="department_id"/>
             </xpath>
-            <xpath expr="//field[@name='lang']" position="attributes">
-                <attribute name="optional">hide</attribute>
-            </xpath>
+<!--            <xpath expr="//field[@name='lang']" position="attributes">-->
+<!--                <attribute name="optional">hide</attribute>-->
+<!--            </xpath>-->
         </field>
     </record>
 </odoo>
