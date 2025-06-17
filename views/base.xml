@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="logic_base_batches_form_view" model="ir.ui.view">
-        <field name="name">Batches</field>
-        <field name="model">logic.batches</field>
-        <field name="type">form</field>
-        <field name="arch" type="xml">
-            <form string="Batch">
-                <sheet>
-                    <div class="oe_title pr-0">
-                        <h1 class="d-flex flex-row justify-content-between">
-                            <field name="name" class="o_task_name text-truncate" placeholder="Batch Name..."
-                                   default_focus="1"/>
-                        </h1>
-                    </div>
-                    <group>
-                        <group>
-                            <field name="coordinator_id"/>
-                            <field name="batch_code"/>
-                            <!--                            <field name="first_year" invisible = "type != 'college'"/>-->
-                            <!--                            <field name="second_year" invisible = "type != 'college'"/>-->
-                            <!--                            <field name="third_year" invisible = "type != 'college'"/>-->
-                            <!--                            <field name="school_type" invisible = "type != 'college'"/>-->
-                            <!--                            <field name="district" style="background:#fac17f;"/>-->
-                            <!--                            <field name="place" style="background:#fac17f;"/>-->
-                            <!--                            <field name="institute_number" placeholder="Institute Number" widget="phone" style="background:#fac17f;"/>-->
-                        </group>
-                        <!--                        <group string="Contact Person Details">-->
-                        <!--                            <field name="designation"/>-->
-                        <!--                            <field name="contact_person_name"/>-->
-                        <!--                            <field name="contact_number" style="background:#fac17f;"/>-->
-                        <!--                        </group>-->
-                    </group>
-                </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
-                </div>
-            </form>
-        </field>
-    </record>
-    <record id="logic_base_batches_list_view" model="ir.ui.view">
-        <field name="name">Batches</field>
-        <field name="model">logic.batches</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="coordinator_id"/>
-            </tree>
-        </field>
-    </record>
+<!--    <record id="logic_base_batches_form_view" model="ir.ui.view">-->
+<!--        <field name="name">Batches</field>-->
+<!--        <field name="model">logic.batches</field>-->
+<!--        <field name="type">form</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Batch">-->
+<!--                <sheet>-->
+<!--                    <div class="oe_title pr-0">-->
+<!--                        <h1 class="d-flex flex-row justify-content-between">-->
+<!--                            <field name="name" class="o_task_name text-truncate" placeholder="Batch Name..."-->
+<!--                                   default_focus="1"/>-->
+<!--                        </h1>-->
+<!--                    </div>-->
+<!--                    <group>-->
+<!--                        <group>-->
+<!--                            <field name="coordinator_id"/>-->
+<!--                            <field name="batch_code"/>-->
+<!--                            &lt;!&ndash;                            <field name="first_year" invisible = "type != 'college'"/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <field name="second_year" invisible = "type != 'college'"/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <field name="third_year" invisible = "type != 'college'"/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <field name="school_type" invisible = "type != 'college'"/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <field name="district" style="background:#fac17f;"/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <field name="place" style="background:#fac17f;"/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <field name="institute_number" placeholder="Institute Number" widget="phone" style="background:#fac17f;"/>&ndash;&gt;-->
+<!--                        </group>-->
+<!--                        &lt;!&ndash;                        <group string="Contact Person Details">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <field name="designation"/>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <field name="contact_person_name"/>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <field name="contact_number" style="background:#fac17f;"/>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        </group>&ndash;&gt;-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--                <div class="oe_chatter">-->
+<!--                    <field name="message_follower_ids"/>-->
+<!--                    <field name="activity_ids"/>-->
+<!--                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="logic_base_batches_list_view" model="ir.ui.view">-->
+<!--        <field name="name">Batches</field>-->
+<!--        <field name="model">logic.batches</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree>-->
+<!--                <field name="name"/>-->
+<!--                <field name="coordinator_id"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
 
-    <record model="ir.actions.act_window" id="logic_base_batches_action">
-        <field name="name">Batch</field>
-        <field name="res_model">logic.batches</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+<!--    <record model="ir.actions.act_window" id="logic_base_batches_action">-->
+<!--        <field name="name">Batch</field>-->
+<!--        <field name="res_model">logic.batches</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
     <!--    <record model="ir.actions.act_window" id="openeducat_core.act_open_op_batch_view">-->
     <!--            <field name="name">Batches</field>-->
     <!--            <field name="type">ir.actions.act_window</field>-->
