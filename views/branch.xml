@@ -6,13 +6,17 @@
         <field name="model">op.branch</field>
         <field name="arch" type="xml">
             <form string="Branches">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                    <button name="act_confirm" type="object" string="Confirm" invisible="state != 'draft'"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
                             <field name="create_date" widget="date" string="Added Date"/>
-                            <field name="name" style="background:#fac17f;"/>
-                            <field name="branch_head_id"/>
-                            <field name="active" invisible="1"/>
+                            <field name="name" style="background:#fac17f;" readonly="state == 'done'"/>
+                            <field name="branch_head_id" readonly="state == 'done'"/>
+                            <field name="active" invisible="1" readonly="state == 'done'"/>
                         </group>
                     </group>
                 </sheet>
