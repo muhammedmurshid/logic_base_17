@@ -146,7 +146,7 @@
             'res_model': 'op.student',
             'target': 'current',
             'domain': [('enrolled', '=', 1)],
-            'context': {'search_default_current_month': 1},
+            'context': {'search_default_current_month_enrollment': 1},
             "views": [
             (env.ref("openeducat_core.view_op_student_tree_enrollment").id, "tree"),
             (env.ref("openeducat_core.kanban_view_student").id, "kanban"),

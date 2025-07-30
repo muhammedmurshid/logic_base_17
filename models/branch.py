@@ -26,4 +26,3 @@ class EmployeeBranchInheritance(models.Model):
     _inherit = 'hr.employee'
 
     branch_id = fields.Many2one('op.branch', string="Branch")
-
